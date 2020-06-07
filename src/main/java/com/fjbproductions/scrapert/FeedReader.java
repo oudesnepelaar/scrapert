@@ -9,7 +9,15 @@ import java.net.URL;
 
 public class FeedReader {
 
-    public String feedURL;
+    public String getFeedURL() {
+        return feedURL;
+    }
+
+    public void setFeedURL(String feedURL) {
+        this.feedURL = feedURL;
+    }
+
+    private String feedURL;
 
     public String getCurrent() {
 
