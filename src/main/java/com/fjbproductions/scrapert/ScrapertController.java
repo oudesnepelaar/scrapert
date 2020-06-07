@@ -6,20 +6,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class FeedController {
+public class ScrapertController {
 
     @Autowired
     private ApplicationContext context;
 
+    @Autowired
+    private FeedReader nosService;
+    @Autowired
+    private FeedReader cnnService;
+
     @RequestMapping("/test")
     public String testMessage() {
-        return "This is the NOSController, bitches!";
+        return "Hij doet het!";
     }
 
     @RequestMapping("/nos")
-    public String getMessage() {
+    public String getNOSMessage() { return nosService.getCurrent(); }
 
-        FeedReader service = (FeedReader) context.getBean("nosService");
-        return service.getCurrent();
-    }
+    @RequestMapping("/cnn")
+    public String getCNNMessage() { return cnnService.getCurrent(); }
 }

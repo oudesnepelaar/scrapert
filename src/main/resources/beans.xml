@@ -6,4 +6,7 @@
     <bean name="nosService" class="com.fjbproductions.scrapert.FeedReader">
         <property name="feedURL" value="http://feeds.nos.nl/nosnieuwsalgemeen" />
     </bean>
+    <bean name="cnnService" class="com.fjbproductions.scrapert.FeedReader">
+        <property name="feedURL" value="http://rss.cnn.com/rss/cnn_latest.rss" />
+    </bean>
 </beans>

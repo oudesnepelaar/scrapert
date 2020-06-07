@@ -29,13 +29,11 @@ public class FeedReader {
 
                 SyndFeed feed = new SyndFeedInput().build(reader);
 
-                result = "Dit is 'm echt!: ";
+                result = "";
                 for (SyndEntry entry : feed.getEntries()) {
 
                     result += entry.getTitle() + " ** ";
                 }
-
-                System.out.println("Done");
             }
 
         }  catch (Exception e) {
