@@ -6,6 +6,8 @@ import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.XmlReader;
 
 import java.net.URL;
+import java.util.List;
+import java.util.Vector;
 
 public class FeedReader {
 
@@ -21,24 +23,39 @@ public class FeedReader {
 
     public String getCurrent() {
 
-        String result = "nothing!";
+        return top(Integer.MAX_VALUE);
+    }
+
+    public String top (int amount) {
+
+        List<SyndEntry> result = new Vector<>();
 
         try {
 
             try (XmlReader reader = new XmlReader(new URL(feedURL))) {
 
                 SyndFeed feed = new SyndFeedInput().build(reader);
+                List<SyndEntry> entries = feed.getEntries();
 
-                result = "";
-                for (SyndEntry entry : feed.getEntries()) {
+                int minimum = Integer.min(amount, entries.size());
 
-                    result += entry.getTitle() + " ** ";
+                for (int i = 0; i < minimum; i++) {
+
+                    result.add(entries.get(i));
                 }
             }
 
         }  catch (Exception e) {
             e.printStackTrace();
         }
+
+        return squish(result);
+    }
+
+    private String squish (List<SyndEntry> entries) {
+
+        String result = "";
+        for (SyndEntry entry: entries) result += entry.getTitle() + " ** ";
 
         return result;
     }

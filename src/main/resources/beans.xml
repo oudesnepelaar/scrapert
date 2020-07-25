@@ -7,6 +7,15 @@
         <property name="feedURL" value="http://feeds.nos.nl/nosnieuwsalgemeen" />
     </bean>
     <bean name="cnnService" class="com.fjbproductions.scrapert.FeedReader">
-        <property name="feedURL" value="http://rss.cnn.com/rss/cnn_latest.rss" />
+        <property name="feedURL" value="http://rss.cnn.com/rss/edition_world.rss" />
+    </bean>
+    <bean name="bbcService" class="com.fjbproductions.scrapert.FeedReader">
+        <property name="feedURL" value="http://feeds.bbci.co.uk/news/world/rss.xml" />
+    </bean>
+    <bean name="nunlService" class="com.fjbproductions.scrapert.FeedReader">
+        <property name="feedURL" value="https://www.nu.nl/rss/Algemeen" />
+    </bean>
+    <bean name="nieuwsnlService" class="com.fjbproductions.scrapert.FeedReader">
+        <property name="feedURL" value="https://nieuws.nl/feed/" />
     </bean>
 </beans>
