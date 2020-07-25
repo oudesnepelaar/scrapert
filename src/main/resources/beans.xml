@@ -18,4 +18,21 @@
     <bean name="nieuwsnlService" class="com.fjbproductions.scrapert.FeedReader">
         <property name="feedURL" value="https://nieuws.nl/feed/" />
     </bean>
+    <bean name="weatherScraper" class="com.fjbproductions.scrapert.TurboScraper">
+        <property name="scrapeURL" value="https://www.weerplaza.nl/nederland/amsterdam/5575/" />
+        <property name="cuttingPoints">
+            <array value-type="java.lang.String">
+                <value>geo-5575 temp&quot;&gt;</value>
+                <value>&lt;/span&gt;</value>
+                <value>Neerslag: &lt;em&gt;</value>
+                <value>&lt;/em&gt;</value>
+                <value>Wind: &lt;em&gt;</value>
+                <value>&lt;/em&gt;</value>
+                <value>Druk: &lt;em&gt;</value>
+                <value>&lt;/em&gt;</value>
+                <value>Vochtigheid: &lt;em&gt;</value>
+                <value>&lt;/em&gt;</value>
+            </array>
+        </property>
+    </bean>
 </beans>

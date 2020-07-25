@@ -12,6 +12,12 @@ public class ScrapertController {
     private ApplicationContext context;
 
     @Autowired
+    private TimeStamper tstamper;
+
+    @Autowired
+    private WeatherService wservice;
+
+    @Autowired
     private FeedReader nosService;
     @Autowired
     private FeedReader cnnService;
@@ -45,11 +51,8 @@ public class ScrapertController {
     @RequestMapping("/mix")
     public String getMixMessage() {
 
-        // add time
-        // add current weather + 3 hour forecast
-        // add Twitter hometimeline top?
-
-        String result = "";
+        String result = tstamper.getFull() + " ** ";
+        result += wservice.fetch() + " ** ";
         result += nosService.top(3);
         result += cnnService.top(3);
         result += bbcService.top(3);
