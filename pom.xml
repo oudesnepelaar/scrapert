@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.fjbproductions</groupId>
 	<artifactId>scrapert</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>scrapert</name>
 	<description>A universal web scraper for feeding data to ticker tape text scrollers</description>
 

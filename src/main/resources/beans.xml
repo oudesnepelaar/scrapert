@@ -6,12 +6,26 @@
     <bean name="nosService" class="com.fjbproductions.scrapert.FeedReader">
         <property name="feedURL" value="http://feeds.nos.nl/nosnieuwsalgemeen" />
     </bean>
-    <bean name="cnnService" class="com.fjbproductions.scrapert.FeedReader">
-        <property name="feedURL" value="http://rss.cnn.com/rss/edition_world.rss" />
-    </bean>
-    <bean name="bbcService" class="com.fjbproductions.scrapert.FeedReader">
+    <bean name="bbcWorldService" class="com.fjbproductions.scrapert.FeedReader">
         <property name="feedURL" value="http://feeds.bbci.co.uk/news/world/rss.xml" />
     </bean>
+
+    <bean name="bbcTechService" class="com.fjbproductions.scrapert.FeedReader">
+        <property name="feedURL" value="http://feeds.bbci.co.uk/news/technology/rss.xml" />
+    </bean>
+
+    <bean name="bbcTopService" class="com.fjbproductions.scrapert.FeedReader">
+        <property name="feedURL" value=" http://feeds.bbci.co.uk/news/rss.xml" />
+    </bean>
+
+    <bean name="bbcArtsService" class="com.fjbproductions.scrapert.FeedReader">
+        <property name="feedURL" value="http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml" />
+    </bean>
+
+    <bean name="wsjService" class="com.fjbproductions.scrapert.FeedReader">
+        <property name="feedURL" value="https://feeds.a.dj.com/rss/RSSWorldNews.xml" />
+    </bean>
+
     <bean name="nunlService" class="com.fjbproductions.scrapert.FeedReader">
         <property name="feedURL" value="https://www.nu.nl/rss/Algemeen" />
     </bean>

@@ -20,9 +20,15 @@ public class ScrapertController {
     @Autowired
     private FeedReader nosService;
     @Autowired
-    private FeedReader cnnService;
+    private FeedReader bbcWorldService;
     @Autowired
-    private FeedReader bbcService;
+    private FeedReader bbcTopService;
+    @Autowired
+    private FeedReader bbcTechService;
+    @Autowired
+    private FeedReader bbcArtsService;
+    @Autowired
+    private FeedReader wsjService;
     @Autowired
     private FeedReader nunlService;
     @Autowired
@@ -36,11 +42,20 @@ public class ScrapertController {
     @RequestMapping("/nos")
     public String getNOSMessage() { return nosService.getCurrent(); }
 
-    @RequestMapping("/cnn")
-    public String getCNNMessage() { return cnnService.getCurrent(); }
+    @RequestMapping("/bbcWorld")
+    public String getBBCWorldMessage() { return bbcWorldService.getCurrent(); }
 
-    @RequestMapping("/bbc")
-    public String getBBCMessage() { return bbcService.getCurrent(); }
+    @RequestMapping("/bbcArts")
+    public String getBBCArtsMessage() { return bbcArtsService.getCurrent(); }
+
+    @RequestMapping("/bbcTech")
+    public String getBBCTechMessage() { return bbcTechService.getCurrent(); }
+
+    @RequestMapping("/bbcTop")
+    public String getBBCTopMessage() { return bbcTopService.getCurrent(); }
+
+    @RequestMapping("/wsj")
+    public String getWSJMessage() { return wsjService.getCurrent(); }
 
     @RequestMapping("/nunl")
     public String getNUNLMessage() { return nunlService.getCurrent(); }
@@ -51,13 +66,16 @@ public class ScrapertController {
     @RequestMapping("/mix")
     public String getMixMessage() {
 
-        String result = tstamper.getFull() + " ** ";
-        result += wservice.fetch() + " ** ";
-        result += nosService.top(3);
-        result += cnnService.top(3);
-        result += bbcService.top(3);
-        result += nunlService.top(3);
-        result += nieuwsnlService.top(3);
+        String result = "Amsterdam, " +tstamper.getFull() + " [ ";
+        result += wservice.fetch() + " ] ** ";
+        result += nosService.top(8);
+        result += bbcWorldService.top(8);
+        result += bbcArtsService.top(5);
+        result += bbcTopService.top(5);
+        result += bbcTechService.top(5);
+        result += wsjService.top(5);
+        result += nunlService.top(5);
+        result += nieuwsnlService.top(5);
 
         return result;
     }

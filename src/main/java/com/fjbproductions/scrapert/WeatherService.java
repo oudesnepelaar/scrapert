@@ -18,11 +18,10 @@ public class WeatherService {
         String result = "";
         String[] values = weatherScraper.scrape();
 
-        result += "temp: " + values[0] + "C ** ";
-        result += "prec: " + values[1] + " ** ";
-        result += "wind: " + values[2] + " ** ";
-        result += "pres: " + values[3] + " ** ";
-        result += "humi: " + values[4];
+        result += " " + values[0] + "C / ";
+        result += values[1] + " / ";
+        result += values[2] + " / ";
+        result += values[4];
 
         return result;
     }
