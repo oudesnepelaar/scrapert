@@ -13,7 +13,7 @@ public class TimeStamper {
 
     final TimeZone tz = TimeZone.getTimeZone("CET");
     final SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-    final SimpleDateFormat fdf = new SimpleDateFormat("EEEEE MMMMM yyyy - HH:mm");
+    final SimpleDateFormat fdf = new SimpleDateFormat("EEEEE dd MMMMM yyyy - HH:mm");
     final Calendar cal = Calendar.getInstance();
 
     @PostConstruct
