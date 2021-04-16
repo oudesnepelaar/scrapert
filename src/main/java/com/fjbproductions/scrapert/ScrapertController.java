@@ -66,8 +66,8 @@ public class ScrapertController {
     @RequestMapping("/mix")
     public String getMixMessage() {
 
-        String result = "Amsterdam, " + tstamper.getFull() + " [ ";
-        result += wservice.fetch() + " ] ** ";
+        String result = "Amsterdam, " + tstamper.getFull() + " [";
+        result += wservice.fetch() + "] ** ";
         result += nosService.top(8);
         result += bbcWorldService.top(8);
         result += bbcArtsService.top(5);

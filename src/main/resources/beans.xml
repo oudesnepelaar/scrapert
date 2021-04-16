@@ -5,39 +5,47 @@
 
     <bean name="nosService" class="com.fjbproductions.scrapert.FeedReader">
         <property name="feedURL" value="http://feeds.nos.nl/nosnieuwsalgemeen" />
+        <property name="sourceIsUTF8" value="true" />
     </bean>
     <bean name="bbcWorldService" class="com.fjbproductions.scrapert.FeedReader">
         <property name="feedURL" value="http://feeds.bbci.co.uk/news/world/rss.xml" />
+        <property name="sourceIsUTF8" value="true" />
     </bean>
 
     <bean name="bbcTechService" class="com.fjbproductions.scrapert.FeedReader">
         <property name="feedURL" value="http://feeds.bbci.co.uk/news/technology/rss.xml" />
+        <property name="sourceIsUTF8" value="true" />
     </bean>
 
     <bean name="bbcTopService" class="com.fjbproductions.scrapert.FeedReader">
         <property name="feedURL" value=" http://feeds.bbci.co.uk/news/rss.xml" />
+        <property name="sourceIsUTF8" value="true" />
     </bean>
 
     <bean name="bbcArtsService" class="com.fjbproductions.scrapert.FeedReader">
         <property name="feedURL" value="http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml" />
+        <property name="sourceIsUTF8" value="true" />
     </bean>
 
     <bean name="wsjService" class="com.fjbproductions.scrapert.FeedReader">
         <property name="feedURL" value="https://feeds.a.dj.com/rss/RSSWorldNews.xml" />
+        <property name="sourceIsUTF8" value="true" />
     </bean>
 
     <bean name="nunlService" class="com.fjbproductions.scrapert.FeedReader">
         <property name="feedURL" value="https://www.nu.nl/rss/Algemeen" />
+        <property name="sourceIsUTF8" value="true" />
     </bean>
     <bean name="nieuwsnlService" class="com.fjbproductions.scrapert.FeedReader">
         <property name="feedURL" value="https://nieuws.nl/feed/" />
+        <property name="sourceIsUTF8" value="true" />
     </bean>
     <bean name="weatherScraper" class="com.fjbproductions.scrapert.TurboScraper">
         <property name="scrapeURL" value="https://www.weerplaza.nl/nederland/amsterdam/5575/" />
         <property name="cuttingPoints">
             <array value-type="java.lang.String">
                 <value>geo-5575 temp&quot;&gt;</value>
-                <value>&lt;/span&gt;</value>
+                <value>°&lt;/span&gt;</value>
                 <value>Neerslag: &lt;em&gt;</value>
                 <value>&lt;/em&gt;</value>
                 <value>Wind: &lt;em&gt;</value>
@@ -48,5 +56,6 @@
                 <value>&lt;/em&gt;</value>
             </array>
         </property>
+        <property name="sourceIsUTF8" value="true" />
     </bean>
 </beans>

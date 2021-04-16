@@ -18,7 +18,7 @@ public class WeatherService {
         String result = "";
         String[] values = weatherScraper.scrape();
 
-        result += " " + values[0] + "C / ";
+        result += values[0] + " C / ";
         result += values[1] + " / ";
         result += values[2] + " / ";
         result += values[4];
