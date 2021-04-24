@@ -13,7 +13,7 @@ import java.util.Vector;
 public class FeedReader {
 
     private String feedURL;
-    private boolean sourceIsUTF8;
+    private final UTF8Filter filter = new UTF8Filter();
 
     public String getCurrent() {
 
@@ -50,27 +50,10 @@ public class FeedReader {
 
         String result = "";
         for (SyndEntry entry: entries) result += entry.getTitle() + " ** ";
-
-        if (sourceIsUTF8) result = decodeUTF8(result);
+        result = filter.filter(result);
 
         return result;
     }
-
-    /**
-     * In case a UTF-8 encoded String is loaded from a data source,
-     * We want to convert this tot the simpler ISO_8859_1 which is what the hardware of the
-     * news tickers often uses, in order to avoid missing characters in the hardware displays.
-     * @param input a UTF-8 String to be re-encoded into ISO_8859_1
-     * @return a ISO_8859_1 encoded String based on the provided input
-     */
-    private String decodeUTF8(String input) {
-
-        byte[] bytes = input.getBytes(StandardCharsets.UTF_8);
-        return new String(bytes, StandardCharsets.ISO_8859_1);
-    }
-
-    public boolean isSourceIsUTF8() { return sourceIsUTF8; }
-    public void setSourceIsUTF8(boolean sourceIsUTF8) { this.sourceIsUTF8 = sourceIsUTF8; }
 
     public String getFeedURL() {
         return feedURL;

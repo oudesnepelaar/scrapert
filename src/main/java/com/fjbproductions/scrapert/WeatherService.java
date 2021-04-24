@@ -1,5 +1,6 @@
 package com.fjbproductions.scrapert;
 
+import com.fjbproductions.scrapert.TurboScraper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
@@ -18,7 +19,7 @@ public class WeatherService {
         String result = "";
         String[] values = weatherScraper.scrape();
 
-        result += values[0] + " C / ";
+        result += values[0] + " °C / ";
         result += values[1] + " / ";
         result += values[2] + " / ";
         result += values[4];
