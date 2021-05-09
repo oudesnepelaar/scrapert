@@ -1,5 +1,6 @@
 package com.fjbproductions.scrapert;
 
+import java.nio.charset.StandardCharsets;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -54,7 +55,7 @@ public class UTF8Filter {
         replacements.put("Ã¿", "\u00FF"); //	ÿ
 
         // if no usable replacement char can be found, we simply drop it from the string
-        // beneath this line, only replcaing with empty strings
+        // beneath this line, only replacing with empty strings
 
         replacements.put("\u0082", ""); // control character
 
