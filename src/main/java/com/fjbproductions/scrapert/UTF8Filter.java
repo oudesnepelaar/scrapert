@@ -69,9 +69,9 @@ public class UTF8Filter {
      */
     public String filter(String input) {
 
-        for (Map.Entry<String, String> entry : replacements.entrySet()) {
-            input = input.replaceAll(entry.getKey(), entry.getValue());
-        }
+//        for (Map.Entry<String, String> entry : replacements.entrySet()) {
+//            input = input.replaceAll(entry.getKey(), entry.getValue());
+//        }
 
         byte[] bytes = input.getBytes(StandardCharsets.ISO_8859_1);
         String output = new String(bytes, StandardCharsets.ISO_8859_1);
