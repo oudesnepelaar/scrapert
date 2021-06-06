@@ -73,6 +73,9 @@ public class UTF8Filter {
             input = input.replaceAll(entry.getKey(), entry.getValue());
         }
 
-        return input;
+        byte[] bytes = input.getBytes(StandardCharsets.ISO_8859_1);
+        String output = new String(bytes, StandardCharsets.ISO_8859_1);
+
+        return output;
     }
 }
