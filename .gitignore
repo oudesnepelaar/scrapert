@@ -2,6 +2,7 @@
 *.iws
 *.iml
 *.ipr
+.DS_Store
 
 target/
 pom.xml.tag
