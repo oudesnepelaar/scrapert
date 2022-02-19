@@ -13,9 +13,11 @@ public class UTF8Filter {
      */
     public String filter(String input) {
 
-        byte[] bytes = input.getBytes(StandardCharsets.ISO_8859_1);
-        String output = new String(bytes, StandardCharsets.ISO_8859_1);
+        return input; // simple bypass mode
 
-        return output;
+//        byte[] bytes = input.getBytes(StandardCharsets.ISO_8859_1);
+//        String output = new String(bytes, StandardCharsets.ISO_8859_1);
+//
+//        return output;
     }
 }
